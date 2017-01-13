@@ -4,4 +4,4 @@
  (author "Adrien (Kooda) Ramos")
  (synopsis "Starts a web server serving the current directory")
  (components (program static-serve
-                                            (linkage static))))
+                      (linkage static))))
