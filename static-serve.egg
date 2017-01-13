@@ -3,4 +3,5 @@
  (dependencies spiffy)
  (author "Adrien (Kooda) Ramos")
  (synopsis "Starts a web server serving the current directory")
- (components (extension static-serve)))
+ (components (program static-serve
+                                            (linkage static))))
