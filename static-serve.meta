@@ -1,5 +1,0 @@
-((license "Public Domain")
- (category web)
- (needs spiffy)
- (author "Adrien (Kooda) Ramos")
- (synopsis "Starts a web server serving the current directory"))

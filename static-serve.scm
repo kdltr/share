@@ -1,7 +1,7 @@
 (module static-serve
     ()
 
-  (import scheme chicken extras)
+  (import scheme chicken (chicken format))
   (use spiffy simple-directory-handler)
 
   (parameterize ((root-path ".")

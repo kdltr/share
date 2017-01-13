@@ -1,8 +1,0 @@
-(compile -s -J static-serve.scm)
-(compile -s static-serve.import.scm)
-
-(install-extension
- 'static-serve
- '("static-serve.so" "static-serve.import.so")
- '((version "0.1.0")))
-
