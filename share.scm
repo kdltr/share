@@ -69,6 +69,8 @@
 (define (provide-download path)
   (let ((dir (pathname-directory path))
         (file (pathname-strip-directory path)))
+    (unless (regular-file? path)
+      (error "You can only share regular files!"))
     (unless (file-read-access? path)
       (error "Unable to open file for reading" path))
     (change-directory (or dir "."))
