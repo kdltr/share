@@ -1,0 +1,15 @@
+((license "Public Domain")
+ (category web)
+ (dependencies
+   spiffy
+   intarweb
+   uri-common
+   args
+   gochan
+   miscmacros
+   multipart-form-data
+   srfi-1
+   srfi-18)
+ (author "Adrien (Kooda) Ramos")
+ (synopsis "Starts a web server serving the current directory")
+ (components (program share (linkage dynamic))))

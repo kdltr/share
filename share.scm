@@ -3,9 +3,27 @@
 ;; TODO archive for directory download
 ;; TODO directory/files listing mode
 
-(import scheme chicken tcp extras ports srfi-18 files posix
-        data-structures)
-(use spiffy intarweb uri-common args gochan multipart-form-data)
+
+(import
+  scheme
+  (chicken base)
+  (chicken file)
+  (chicken file)
+  (chicken file posix)
+  (chicken format)
+  (chicken pathname)
+  (chicken port)
+  (chicken process-context)
+  (chicken tcp)
+  srfi-1
+  srfi-18
+  args
+  spiffy
+  intarweb
+  uri-common
+  gochan
+  multipart-form-data
+  miscmacros)
 
 (tcp-buffer-size 2048)
 
@@ -71,14 +89,14 @@
         (file (pathname-strip-directory path)))
     (unless (regular-file? path)
       (error "You can only share regular files!"))
-    (unless (file-read-access? path)
+    (unless (file-readable? path)
       (error "Unable to open file for reading" path))
     (change-directory (or dir "."))
     (vhost-map `((".*" . ,(download-handler file))))
     (startup!)))
 
 (define (provide-upload)
-  (unless (file-write-access? ".")
+  (unless (file-writable? ".")
     (error "Unable to write any file in the current directory."))
   (vhost-map `((".*" . ,upload-handler)))
   (startup!))
