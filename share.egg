@@ -12,4 +12,4 @@
    srfi-18)
  (author "Adrien (Kooda) Ramos")
  (synopsis "Starts a web server serving the current directory")
- (components (program share (linkage dynamic))))
+ (components (program share (linkage static))))
